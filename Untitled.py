@@ -13,15 +13,14 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D
 from keras import backend as K
-from keras.applications.vgg16 import preprocess_input
 from keras.optimizers import RMSprop
 from keras.preprocessing.image import ImageDataGenerator
 # In[2]:
 
 PATH ='dataset/'
 # In[3]:
-train = pd.read_csv(f'{PATH}train.csv')
-test = pd.read_csv(f'{PATH}test.csv')
+train = pd.read_csv(PATH + 'train.csv')
+test = pd.read_csv(PATH+'test.csv')
 # In[4]:
 def split_data(tr_data,n):
     return tr_data.iloc[:len(tr_data)-n],tr_data.iloc[len(tr_data)-n:]
